@@ -45,6 +45,8 @@ const useFetchInitialData = ( collectionName ) => {
         console.info('Retrieving from local storage')
         // ... get it from localStorage...
         collData = JSON.parse(localStorage.getItem(collectionName))
+        // (sort data by id (if id property exists) for consistent rendering on page)
+        collData.sort((a, b) => a.id - b.id)
         // ... and set it as our state
         dispatch({ type: 'LOADED', payload: collData })
 
@@ -61,6 +63,9 @@ const useFetchInitialData = ( collectionName ) => {
         }
           
         collData = snapshot.docs.map(doc => doc.data())
+
+        // (sort data by id (if id property exists) for consistent rendering on page)
+        collData.sort((a, b) => a.id - b.id)
 
         // Set Firestore data as our state...
         dispatch({ type: 'LOADED', payload: collData })

@@ -1,6 +1,7 @@
 import React from 'react'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
+import Hidden from '@material-ui/core/Hidden'
 import IconButton from '@material-ui/core/IconButton'
 import Typography from '@material-ui/core/Typography'
 import InputBase from '@material-ui/core/InputBase';
@@ -10,22 +11,24 @@ import SearchIcon from '@material-ui/icons/Search'
 
 import useSearchAppBarStyles from './SearchAppBar.styles'
 
-const SearchAppBar = ({ menuClick }) => {
+const SearchAppBar = ({ handleDrawerToggle }) => {
   const classes = useSearchAppBarStyles()
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar position="fixed" className={classes.appBar}>
         <Toolbar>
-          <IconButton
-            className={classes.menuButton}
-            edge="start"
-            color="inherit"
-            aria-label="open drawer"
-            onClick={menuClick}
-          >
-            <MenuIcon />
-          </IconButton>
+          <Hidden smUp>
+            <IconButton
+              className={classes.menuButton}
+              edge="start"
+              color="inherit"
+              aria-label="open drawer"
+              onClick={handleDrawerToggle}
+            >
+              <MenuIcon />
+            </IconButton>
+          </Hidden>
           <Typography
             className={classes.title}
             component="h1"

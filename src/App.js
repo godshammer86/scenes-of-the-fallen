@@ -1,18 +1,20 @@
-import { FirestoreProvider } from './components/dataProviders/FirestoreProvider';
-import SearchAppBar from './components/SearchAppBar/SearchAppBar'
-import VerticalMenu from './components/VerticalMenu/VerticalMenu';
+import FirestoreProvider from './components/Contexts/FirestoreProvider';
+
+import CssBaseline from '@material-ui/core/CssBaseline';
+import ResponsiveDrawer from './components/ResponsiveDrawer/ResponsiveDrawer';
 
 import './App.css';
 
 const App = () => {
 
   return (
-    <div className="App">
-      <FirestoreProvider>
-        <SearchAppBar/>
-        <VerticalMenu/>
-      </FirestoreProvider>
-    </div>
+    <FirestoreProvider>
+      <div className="App">
+        <CssBaseline />
+        
+        <ResponsiveDrawer />
+      </div>
+    </FirestoreProvider>
     
   );
 }
