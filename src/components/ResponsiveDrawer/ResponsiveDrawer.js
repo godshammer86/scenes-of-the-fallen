@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 import SearchAppBar from '../SearchAppBar/SearchAppBar'
 import ClippedDrawer from './ClippedDrawer/ClippedDrawer'
@@ -12,7 +12,7 @@ import useResponsiveDrawerStyles from './ResponsiveDrawer.styles'
 
 const ResponsiveDrawer = () => {
   const classes = useResponsiveDrawerStyles()
-  const [mobileOpen, setMobileOpen] = useState(false)
+  const [mobileOpen, setMobileOpen] = React.useState(false)
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);

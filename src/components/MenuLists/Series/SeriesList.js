@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React from 'react'
 
 import List from '@material-ui/core/List'
 import ListSubheader from '@material-ui/core/ListSubheader'
@@ -16,8 +16,8 @@ const SeriesList = ({ children }) => {
   const classes = useSeriesListStyles()
 
   // State
-  const { series } = useContext(FirestoreContext)
-  const [selectedSeriesId, setSelectedSeriesId] = useState(0)
+  const { series } = React.useContext(FirestoreContext)
+  const [selectedSeriesId, setSelectedSeriesId] = React.useState(0)
 
   // Event handlers
   const handleToggleSeries = (id) => {

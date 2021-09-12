@@ -26,7 +26,9 @@ yarn-error.log*
 # personal experimentation
 testData.js
 testFirebase.js
+mapTestDataToPages.js
 useLocalStorage.js
 useGetFromFirebase.js
 useFetchInitialData_v1.js
+/NestedList
 

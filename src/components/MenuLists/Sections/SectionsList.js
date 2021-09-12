@@ -1,7 +1,6 @@
-import React, { useState, useContext } from 'react'
+import React from 'react'
 
 import List from '@material-ui/core/List'
-import ListSubheader from '@material-ui/core/ListSubheader'
 import ListItem from '@material-ui/core/ListItem'
 import Typography from '@material-ui/core/Typography'
 import Link from '@material-ui/core/Link'
@@ -13,7 +12,7 @@ const SectionsList = ({ book }) => {
   const classes = useSectionsListStyles()
 
   // State
-  const { sections } = useContext(FirestoreContext)
+  const { sections } = React.useContext(FirestoreContext)
 
   const sectionItems = book.published ? (
     sections.data.filter((bookSections) => {
