@@ -1,14 +1,17 @@
 import React from 'react'
+import { makeStyles } from '@material-ui/core/styles'
+import SearchAppBar from './SearchAppBar'
+import ClippedDrawer from './ClippedDrawer'
+import MobileDrawer from './MobileDrawer'
+import SeriesList from './SeriesList'
+import BooksList from './BooksList'
+import SectionsList from './SectionsList'
 
-import SearchAppBar from '../SearchAppBar/SearchAppBar'
-import ClippedDrawer from './ClippedDrawer/ClippedDrawer'
-import MobileDrawer from './MobileDrawer/MobileDrawer'
-
-import SeriesList from '../MenuLists/Series/SeriesList'
-import BooksList from '../MenuLists/Books/BooksList'
-import SectionsList from '../MenuLists/Sections/SectionsList'
-
-import useResponsiveDrawerStyles from './ResponsiveDrawer.styles'
+const useResponsiveDrawerStyles = makeStyles((theme) => ({
+  root: {
+    display: 'flex',
+  },
+}))
 
 const ResponsiveDrawer = () => {
   const classes = useResponsiveDrawerStyles()

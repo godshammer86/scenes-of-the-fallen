@@ -1,16 +1,33 @@
 import React from 'react'
-
 import List from '@material-ui/core/List'
 import ListSubheader from '@material-ui/core/ListSubheader'
 import Button from '@material-ui/core/Button'
 import Collapse from '@material-ui/core/Collapse'
 import Divider from '@material-ui/core/Divider'
-
+import { makeStyles } from '@material-ui/core/styles';
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
+import { FirestoreContext } from './Contexts/FirestoreProvider'
 
-import FirestoreContext from '../../Contexts/FirestoreContext'
-import useSeriesListStyles from './SeriesList.styles'
+const useSeriesListStyles = makeStyles((theme) => ({
+  listSubheader: {
+    display: 'block',
+    padding: 0,
+    backgroundColor: theme.palette.common.white
+  },
+  button: {
+    width: '100%',
+    letterSpacing: 0,
+    borderRadius: 0,
+    justifyContent: 'flex-start',
+    fontWeight: theme.typography.fontWeightBold
+  },
+  buttonLabel: {
+    padding: '14px 8px',
+    justifyContent: 'space-between',
+  },
+}))
+
 
 const SeriesList = ({ children }) => {
   const classes = useSeriesListStyles()

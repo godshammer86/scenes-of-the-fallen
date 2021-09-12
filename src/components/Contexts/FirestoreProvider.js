@@ -1,8 +1,8 @@
 import React from 'react'
-import BlockingLoader from '../BlockingLoader/BlockingLoader'
+import BlockingLoader from '../BlockingLoader'
 import useFetchInitialData from '../../hooks/useFetchInitialData'
 
-import FirestoreContext from './FirestoreContext'
+const FirestoreContext = React.createContext()
 
 const FirestoreProvider = ({ children }) => {
   const series = useFetchInitialData('series')
@@ -24,5 +24,5 @@ const FirestoreProvider = ({ children }) => {
     </FirestoreContext.Provider>
   )
 }
-
+export { FirestoreContext }
 export default FirestoreProvider

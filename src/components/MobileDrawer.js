@@ -3,8 +3,18 @@ import React from 'react'
 import Hidden from '@material-ui/core/Hidden'
 import  Drawer from '@material-ui/core/Drawer'
 import { useTheme } from '@material-ui/core'
+import { makeStyles } from '@material-ui/core/styles';
 
-import useMobileDrawerStyles from './MobileDrawer.styles'
+const drawerWidth = 300
+
+const useMobileDrawerStyles = makeStyles((theme) => ({
+  drawerPaper: {
+    width: drawerWidth,
+  },
+  drawerContainer: {
+    overflow: 'auto',
+  },
+}))
 
 const MobileDrawer = ({ mobileOpen, handleDrawerToggle, children }) => {
   const classes = useMobileDrawerStyles()

@@ -1,7 +1,6 @@
-import FirestoreProvider from './components/Contexts/FirestoreProvider';
-
 import CssBaseline from '@material-ui/core/CssBaseline';
-import ResponsiveDrawer from './components/ResponsiveDrawer/ResponsiveDrawer';
+import ResponsiveDrawer from './components/ResponsiveDrawer';
+import FirestoreProvider from './components/Contexts/FirestoreProvider';
 
 import './App.css';
 
